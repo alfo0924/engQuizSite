@@ -1,233 +1,376 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // 測驗題目
-    const quizQuestions = [
-        {
-            question: "Mr. Yang's trip will _____ him away from the office for ten days.",
-            options: ["withdraw", "continue", "retain", "keep"],
-            correctAnswer: 3,
-            explanation: "正確答案是 'keep'。這個句子需要一個動詞來表示「使某人遠離某地」，keep away from 是正確的搭配。",
-            errorType: "動詞片語搭配"
-        },
-        {
-            question: "The company that Marie DuBois started now sells _____ products throughout the world.",
-            options: ["its", "it", "theirs", "them"],
-            correctAnswer: 0,
-            explanation: "正確答案是 'its'。公司是單數，需要使用所有格代名詞 'its' 來表示公司的產品。",
-            errorType: "所有格代名詞使用"
-        },
-        {
-            question: "If your shipment is not delivered _____ Tuesday, you can request a full refund for the merchandise.",
-            options: ["at", "by", "within", "while"],
-            correctAnswer: 1,
-            explanation: "正確答案是 'by'。'by' 表示「在...之前」，適合用於截止日期的表達。",
-            errorType: "介系詞使用"
-        },
-        {
-            question: "The hotel breakfast _____ fresh fruit juice and a choice of pastries.",
-            options: ["includes", "to include", "including", "was included"],
-            correctAnswer: 0,
-            explanation: "正確答案是 'includes'。句子需要一個現在式動詞，而 'includes' 是正確的形式。",
-            errorType: "動詞時態"
-        },
-        {
-            question: "We regret to announce the _____ of the training session scheduled for April 21.",
-            options: ["denial", "incapability", "postponement", "dismissal"],
-            correctAnswer: 2,
-            explanation: "正確答案是 'postponement'。根據上下文，這裡需要表達「延期」的意思，'postponement' 是最合適的選擇。",
-            errorType: "詞彙選擇"
-        },
-        {
-            question: "The pamphlet contains some _____ information about the current exhibit.",
-            options: ["importance", "important", "importantly", "importanting"],
-            correctAnswer: 1,
-            explanation: "正確答案是 'important'。'information' 是名詞，前面需要用形容詞 'important' 來修飾，而不是名詞 'importance'。",
-            errorType: "形容詞使用"
-        },
-        {
-            question: "No matter how long it _____ to finish the annual report, it must be done properly.",
-            options: ["taking", "takes", "to take", "taken"],
-            correctAnswer: 1,
-            explanation: "正確答案是 'takes'。這裡需要一個現在式動詞，主詞是 'it'，所以使用第三人稱單數形式 'takes'。",
-            errorType: "動詞形式"
-        },
-        {
-            question: "The popularity of jogging appears to have decreased _____ the past couple of years.",
-            options: ["since", "for", "during", "while"],
-            correctAnswer: 0,
-            explanation: "正確答案是 'since'。表示「從...以來」的時間關係，'since' 是正確的介系詞。",
-            errorType: "介系詞使用"
-        },
-        {
-            question: "At the hotel, laundry sent out by 10:00 a.m. _____ be returned by 5:00 p.m. the same day.",
-            options: ["it will", "will", "it", "they will"],
-            correctAnswer: 1,
-            explanation: "正確答案是 'will'。這個句子的主詞是 'laundry'，不需要再加代名詞 'it'，直接使用助動詞 'will'。",
-            errorType: "句子結構"
-        },
-        {
-            question: "The _____ capital expenditures, after allowing for inflation, are projected to be 8.4 billion euros.",
-            options: ["totally", "total", "totaling", "totality"],
-            correctAnswer: 1,
-            explanation: "正確答案是 'total'。這裡需要一個形容詞來修飾名詞 'capital expenditures'，'total' 是正確的形容詞形式。",
-            errorType: "形容詞使用"
-        }
-    ];
+// 測驗問題資料
+const quizQuestions = [
+    {
+        question: "Customer reviews indicate that many modern mobile devices are often unnecessarily _______.",
+        options: [
+            "complication",
+            "complicates",
+            "complicate",
+            "complicated"
+        ],
+        correctAnswer: 3,
+        explanation: "需要一個形容詞來修飾'devices'，'complicated'是正確的形容詞形式。",
+        grammarPoint: "形容詞用法",
+        difficulty: "中級"
+    },
+    {
+        question: "Jamal Nawzad has received top performance reviews _______ he joined the sales department two years ago.",
+        options: [
+            "despite",
+            "except",
+            "since",
+            "during"
+        ],
+        correctAnswer: 2,
+        explanation: "'since'表示「自從...以來」，正確表達了時間關係。",
+        grammarPoint: "連接詞用法",
+        difficulty: "初級"
+    },
+    {
+        question: "Gyeon Corporation's continuing education policy states that _______ learning new skills enhances creativity and focus.",
+        options: [
+            "regular",
+            "regularity",
+            "regulate",
+            "regularly"
+        ],
+        correctAnswer: 3,
+        explanation: "需要一個副詞來修飾動詞'learning'，'regularly'是正確的副詞形式。",
+        grammarPoint: "副詞用法",
+        difficulty: "中級"
+    },
+    {
+        question: "Among _______ recognized at the company awards ceremony were senior business analyst Natalie Obi and sales associate Peter Comeau.",
+        options: [
+            "who",
+            "whose",
+            "they",
+            "those"
+        ],
+        correctAnswer: 3,
+        explanation: "'those'是正確的代名詞，用來指代「那些人」。",
+        grammarPoint: "代名詞用法",
+        difficulty: "高級"
+    },
+    {
+        question: "All clothing sold in Develyn's Boutique is made from natural materials and contains no _______ dyes.",
+        options: [
+            "immediate",
+            "synthetic",
+            "reasonable",
+            "assumed"
+        ],
+        correctAnswer: 1,
+        explanation: "'synthetic'（合成的）是正確的形容詞，與'natural materials'形成對比。",
+        grammarPoint: "形容詞選擇",
+        difficulty: "中級"
+    },
+    {
+        question: "The marketing team _______ the new advertising campaign next month.",
+        options: [
+            "launches",
+            "will launch",
+            "launching",
+            "has launched"
+        ],
+        correctAnswer: 1,
+        explanation: "'will launch'表示未來時態，正確表達將來的行動。",
+        grammarPoint: "時態",
+        difficulty: "初級"
+    },
+    {
+        question: "If the project _______ on schedule, we would have met the client's deadline.",
+        options: [
+            "was completed",
+            "has been completed",
+            "had been completed",
+            "would complete"
+        ],
+        correctAnswer: 2,
+        explanation: "這是一個虛擬條件句（過去虛擬），需要使用'had been completed'。",
+        grammarPoint: "虛擬條件句",
+        difficulty: "高級"
+    },
+    {
+        question: "The report _______ by the research team was presented at the conference.",
+        options: [
+            "preparing",
+            "prepared",
+            "prepares",
+            "to prepare"
+        ],
+        correctAnswer: 1,
+        explanation: "需要一個過去分詞作為被動語態，'prepared'是正確的形式。",
+        grammarPoint: "分詞用法",
+        difficulty: "中級"
+    },
+    {
+        question: "Neither the CEO nor the board members _______ with the proposed changes.",
+        options: [
+            "agrees",
+            "agree",
+            "agreeing",
+            "to agree"
+        ],
+        correctAnswer: 1,
+        explanation: "當主語由'neither...nor...'連接時，動詞應與較接近的主語一致，這裡是'board members'，所以用複數形式'agree'。",
+        grammarPoint: "主謂一致",
+        difficulty: "高級"
+    },
+    {
+        question: "The company is looking for candidates _______ can speak at least two languages fluently.",
+        options: [
+            "which",
+            "who",
+            "whose",
+            "whom"
+        ],
+        correctAnswer: 1,
+        explanation: "當關係代名詞指人時，應使用'who'。",
+        grammarPoint: "關係代名詞",
+        difficulty: "中級"
+    }
+];
 
-    let currentQuestion = 0;
-    let selectedAnswers = [];
-    let score = 0;
+// 全局變數
+let currentQuestion = 0;
+let userAnswers = Array(quizQuestions.length).fill(null);
+let quizStarted = false;
 
-    const questionNumberElement = document.getElementById('question-number');
-    const questionTextElement = document.getElementById('question-text');
-    const optionsContainer = document.getElementById('options-container');
-    const submitButton = document.getElementById('submit-btn');
-    const progressBar = document.getElementById('progress');
-    const quizSection = document.getElementById('quiz-section');
-    const resultSection = document.getElementById('result-section');
-    const scoreElement = document.getElementById('score');
-    const analysisElement = document.getElementById('analysis');
-    const detailedResultsElement = document.getElementById('detailed-results');
-    const restartButton = document.getElementById('restart-btn');
+// DOM元素
+const introSection = document.getElementById('intro-section');
+const quizSection = document.getElementById('quiz-section');
+const resultsSection = document.getElementById('results-section');
+const startBtn = document.getElementById('start-btn');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const submitBtn = document.getElementById('submit-btn');
+const retryBtn = document.getElementById('retry-btn');
+const questionContainer = document.getElementById('question-container');
+const questionNumber = document.getElementById('question-number');
+const progressIndicator = document.getElementById('progress-indicator');
+const scoreDisplay = document.getElementById('score-display');
+const gaugeFill = document.getElementById('gauge-fill');
+const skillAnalysis = document.getElementById('skill-analysis');
+const questionResults = document.getElementById('detailed-results');
 
-    // 初始化測驗
-    function initQuiz() {
-        currentQuestion = 0;
-        selectedAnswers = Array(quizQuestions.length).fill(-1);
-        score = 0;
-        loadQuestion();
-        quizSection.classList.remove('hidden');
-        resultSection.classList.add('hidden');
+// 初始化測驗
+function initQuiz() {
+    startBtn.addEventListener('click', startQuiz);
+    prevBtn.addEventListener('click', goToPreviousQuestion);
+    nextBtn.addEventListener('click', goToNextQuestion);
+    submitBtn.addEventListener('click', submitQuiz);
+    retryBtn.addEventListener('click', resetQuiz);
+}
+
+// 開始測驗
+function startQuiz() {
+    quizStarted = true;
+    introSection.classList.remove('active');
+    introSection.classList.add('hidden');
+    quizSection.classList.remove('hidden');
+    quizSection.classList.add('active');
+    loadQuestion(currentQuestion);
+}
+
+// 載入問題
+function loadQuestion(index) {
+    const question = quizQuestions[index];
+    questionContainer.innerHTML = `
+        <div class="question">
+            <h3>${index + 1}. ${question.question}</h3>
+            <ul class="options">
+                ${question.options.map((option, i) => `
+                    <li class="option ${userAnswers[index] === i ? 'selected' : ''}" data-index="${i}">
+                        ${String.fromCharCode(65 + i)}. ${option}
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+    `;
+
+    // 更新問題編號和進度條
+    questionNumber.textContent = `問題 ${index + 1} / ${quizQuestions.length}`;
+    progressIndicator.style.width = `${((index + 1) / quizQuestions.length) * 100}%`;
+
+    // 更新導航按鈕狀態
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === quizQuestions.length - 1;
+
+    // 顯示或隱藏提交按鈕
+    if (index === quizQuestions.length - 1) {
+        submitBtn.classList.remove('hidden');
+    } else {
+        submitBtn.classList.add('hidden');
     }
 
-    // 載入當前題目
-    function loadQuestion() {
-        const question = quizQuestions[currentQuestion];
-        questionNumberElement.textContent = `問題 ${currentQuestion + 1} / ${quizQuestions.length}`;
-        questionTextElement.textContent = question.question;
-
-        optionsContainer.innerHTML = '';
-        question.options.forEach((option, index) => {
-            const button = document.createElement('button');
-            button.className = 'option';
-            button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
-
-            if (selectedAnswers[currentQuestion] === index) {
-                button.classList.add('selected');
-            }
-
-            button.addEventListener('click', () => selectOption(index));
-            optionsContainer.appendChild(button);
+    // 添加選項點擊事件
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            selectOption(option);
         });
+    });
+}
 
-        updateProgressBar();
-        updateSubmitButton();
+// 選擇選項
+function selectOption(selectedOption) {
+    const optionIndex = parseInt(selectedOption.dataset.index);
+    userAnswers[currentQuestion] = optionIndex;
+
+    // 更新選項樣式
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.classList.remove('selected');
+    });
+    selectedOption.classList.add('selected');
+}
+
+// 前往上一題
+function goToPreviousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
     }
+}
 
-    // 選擇選項
-    function selectOption(index) {
-        selectedAnswers[currentQuestion] = index;
-
-        const options = document.querySelectorAll('.option');
-        options.forEach(option => option.classList.remove('selected'));
-        options[index].classList.add('selected');
-
-        updateSubmitButton();
+// 前往下一題
+function goToNextQuestion() {
+    if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
     }
+}
 
-    // 更新提交按鈕狀態
-    function updateSubmitButton() {
-        if (selectedAnswers[currentQuestion] !== -1) {
-            submitButton.disabled = false;
-        } else {
-            submitButton.disabled = true;
+// 提交測驗
+function submitQuiz() {
+    // 檢查是否所有問題都已回答
+    const unansweredQuestions = userAnswers.findIndex(answer => answer === null);
+
+    if (unansweredQuestions !== -1) {
+        if (!confirm(`您還有未回答的問題。確定要提交嗎？`)) {
+            return;
         }
     }
 
-    // 更新進度條
-    function updateProgressBar() {
-        const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
-        progressBar.style.width = `${progress}%`;
-    }
+    // 計算分數
+    const score = calculateScore();
 
-    // 提交答案
-    submitButton.addEventListener('click', function() {
-        currentQuestion++;
+    // 顯示結果頁面
+    quizSection.classList.remove('active');
+    quizSection.classList.add('hidden');
+    resultsSection.classList.remove('hidden');
+    resultsSection.classList.add('active');
 
-        if (currentQuestion < quizQuestions.length) {
-            loadQuestion();
-        } else {
-            showResults();
+    // 顯示分數
+    scoreDisplay.textContent = `${score} / ${quizQuestions.length} 正確`;
+    gaugeFill.style.width = `${(score / quizQuestions.length) * 100}%`;
+
+    // 分析技能
+    analyzeSkills();
+
+    // 顯示詳細結果
+    showDetailedResults();
+}
+
+// 計算分數
+function calculateScore() {
+    return userAnswers.reduce((score, answer, index) => {
+        return answer === quizQuestions[index].correctAnswer ? score + 1 : score;
+    }, 0);
+}
+
+// 分析技能
+function analyzeSkills() {
+    // 按文法點分類問題
+    const grammarPoints = {};
+
+    quizQuestions.forEach((question, index) => {
+        const point = question.grammarPoint;
+        if (!grammarPoints[point]) {
+            grammarPoints[point] = {
+                total: 0,
+                correct: 0
+            };
+        }
+
+        grammarPoints[point].total++;
+        if (userAnswers[index] === question.correctAnswer) {
+            grammarPoints[point].correct++;
         }
     });
 
-    // 顯示測驗結果
-    function showResults() {
-        quizSection.classList.add('hidden');
-        resultSection.classList.remove('hidden');
+    // 生成技能分析HTML
+    let analysisHTML = '';
 
-        // 計算分數
-        score = 0;
-        const errorTypes = {};
+    for (const point in grammarPoints) {
+        const { total, correct } = grammarPoints[point];
+        const percentage = (correct / total) * 100;
 
-        selectedAnswers.forEach((selected, index) => {
-            if (selected === quizQuestions[index].correctAnswer) {
-                score++;
-            } else {
-                const errorType = quizQuestions[index].errorType;
-                errorTypes[errorType] = (errorTypes[errorType] || 0) + 1;
-            }
-        });
-
-        // 顯示分數
-        const percentage = (score / quizQuestions.length) * 100;
-        scoreElement.textContent = `${score} / ${quizQuestions.length} (${percentage.toFixed(0)}%)`;
-
-        // 分析錯誤類型
-        let analysisHTML = '<h3>錯誤類型分析</h3>';
-
-        if (Object.keys(errorTypes).length === 0) {
-            analysisHTML += '<p>恭喜！您全部答對了！</p>';
-        } else {
-            analysisHTML += '<p>您需要加強的部分：</p><ul>';
-
-            Object.entries(errorTypes)
-                .sort((a, b) => b[1] - a[1])
-                .forEach(([type, count]) => {
-                    analysisHTML += `<li><strong>${type}</strong>: ${count} 題錯誤</li>`;
-                });
-
-            analysisHTML += '</ul>';
-        }
-
-        analysisElement.innerHTML = analysisHTML;
-
-        // 詳細結果
-        let detailedHTML = '<h3>詳細答題結果</h3>';
-
-        selectedAnswers.forEach((selected, index) => {
-            const question = quizQuestions[index];
-            const isCorrect = selected === question.correctAnswer;
-
-            detailedHTML += `
-                <div class="question-result ${isCorrect ? 'correct' : 'incorrect'}">
-                    <h3>問題 ${index + 1}</h3>
-                    <p>${question.question}</p>
-                    <p>您的答案: ${String.fromCharCode(65 + selected)}. ${question.options[selected]}</p>
-                    ${!isCorrect ? `<p>正確答案: <span class="correct-answer">${String.fromCharCode(65 + question.correctAnswer)}. ${question.options[question.correctAnswer]}</span></p>` : ''}
-                    <div class="explanation">
-                        <p>${question.explanation}</p>
-                        ${!isCorrect ? `<p>錯誤類型: <span class="error-type">${question.errorType}</span></p>` : ''}
-                    </div>
+        analysisHTML += `
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>${point}</span>
+                    <span>${correct}/${total}</span>
                 </div>
-            `;
-        });
-
-        detailedResultsElement.innerHTML = detailedHTML;
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: ${percentage}%"></div>
+                </div>
+            </div>
+        `;
     }
 
-    // 重新測驗
-    restartButton.addEventListener('click', initQuiz);
+    skillAnalysis.innerHTML = analysisHTML;
+}
 
-    // 初始化測驗
-    initQuiz();
-});
+// 顯示詳細結果
+function showDetailedResults() {
+    let resultsHTML = '';
+
+    quizQuestions.forEach((question, index) => {
+        const userAnswer = userAnswers[index];
+        const isCorrect = userAnswer === question.correctAnswer;
+
+        resultsHTML += `
+            <div class="result-item">
+                <div class="result-header">
+                    <h4>問題 ${index + 1}</h4>
+                    <span class="result-status ${isCorrect ? 'status-correct' : 'status-incorrect'}">
+                        ${isCorrect ? '正確' : '錯誤'}
+                    </span>
+                </div>
+                <p>${question.question}</p>
+                <ul class="options">
+                    ${question.options.map((option, i) => `
+                        <li class="option ${i === question.correctAnswer ? 'correct' : ''} ${i === userAnswer && i !== question.correctAnswer ? 'incorrect' : ''}">
+                            ${String.fromCharCode(65 + i)}. ${option}
+                            ${i === question.correctAnswer ? ' ✓' : ''}
+                            ${i === userAnswer && i !== question.correctAnswer ? ' ✗' : ''}
+                        </li>
+                    `).join('')}
+                </ul>
+                <div class="explanation">
+                    <p><strong>解釋：</strong> ${question.explanation}</p>
+                    <p><strong>文法點：</strong> ${question.grammarPoint} (${question.difficulty})</p>
+                    <p class="correct-answer"><strong>正確答案：</strong> ${String.fromCharCode(65 + question.correctAnswer)}. ${question.options[question.correctAnswer]}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    questionResults.innerHTML = resultsHTML;
+}
+
+// 重置測驗
+function resetQuiz() {
+    currentQuestion = 0;
+    userAnswers = Array(quizQuestions.length).fill(null);
+
+    resultsSection.classList.remove('active');
+    resultsSection.classList.add('hidden');
+    introSection.classList.remove('hidden');
+    introSection.classList.add('active');
+}
+
+// 頁面載入時初始化測驗
+document.addEventListener('DOMContentLoaded', initQuiz);

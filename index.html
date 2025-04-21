@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多益英文文法測驗</title>
+    <title>英文文法測驗</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <header>
-        <h1>多益英文文法測驗</h1>
-        <p>測驗難度範圍：多益分數 10~990</p>
+        <h1>英文文法測驗</h1>
+        <p>測試您的英文文法能力 (TOEIC 10-990分水平)</p>
     </header>
 
-    <div id="result-section" class="hidden">
-        <div class="score-display">
-            <h2>您的測驗結果</h2>
-            <div id="score"></div>
+    <section id="intro-section" class="active">
+        <div class="intro-content">
+            <h2>歡迎參加英文文法測驗</h2>
+            <p>本測驗包含10道選擇題，每題有4個選項，測試您的英文文法能力。</p>
+            <p>完成測驗後，您將獲得詳細的分析與建議。</p>
+            <button id="start-btn" class="btn primary-btn">開始測驗</button>
         </div>
-        <div id="analysis"></div>
-        <div id="detailed-results"></div>
-        <button id="restart-btn">重新測驗</button>
-    </div>
+    </section>
 
-    <div id="quiz-section">
+    <section id="quiz-section" class="hidden">
         <div id="progress-bar">
-            <div id="progress"></div>
+            <div id="progress-indicator"></div>
         </div>
         <div id="question-container">
-            <div id="question-number"></div>
-            <div id="question-text"></div>
-            <div id="options-container"></div>
+            <!-- 問題將由JavaScript動態生成 -->
         </div>
-        <div class="button-container">
-            <button id="submit-btn" disabled>送出答案</button>
+        <div class="navigation-buttons">
+            <button id="prev-btn" class="btn secondary-btn" disabled>上一題</button>
+            <span id="question-number">問題 1 / 10</span>
+            <button id="next-btn" class="btn secondary-btn">下一題</button>
         </div>
-    </div>
+        <button id="submit-btn" class="btn primary-btn hidden">提交測驗</button>
+    </section>
+
+    <section id="results-section" class="hidden">
+        <div id="score-container">
+            <h2>測驗結果</h2>
+            <div id="score-display"></div>
+            <div id="score-gauge">
+                <div id="gauge-fill"></div>
+            </div>
+        </div>
+        <div id="analysis-container">
+            <h3>能力分析</h3>
+            <div id="skill-analysis"></div>
+        </div>
+        <div id="detailed-results">
+            <h3>詳細結果</h3>
+            <div id="question-results"></div>
+        </div>
+        <button id="retry-btn" class="btn primary-btn">重新測驗</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 英文文法測驗 | 設計：扁平化UI/UX</p>
+    </footer>
 </div>
 <script src="script.js"></script>
 </body>
