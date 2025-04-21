@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多益英文文法測驗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>多益英文文法測驗</h1>
+        <p>測驗難度範圍：多益分數 10~990</p>
+    </header>
+
+    <div id="result-section" class="hidden">
+        <div class="score-display">
+            <h2>您的測驗結果</h2>
+            <div id="score"></div>
+        </div>
+        <div id="analysis"></div>
+        <div id="detailed-results"></div>
+        <button id="restart-btn">重新測驗</button>
+    </div>
+
+    <div id="quiz-section">
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <div id="question-container">
+            <div id="question-number"></div>
+            <div id="question-text"></div>
+            <div id="options-container"></div>
+        </div>
+        <div class="button-container">
+            <button id="submit-btn" disabled>送出答案</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
